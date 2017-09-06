@@ -7,7 +7,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     
 <c:if test="${not empty login}">
     |<a href="AccountServlet?action=logout">Logout</a>
-    |<a href="AccountServlet?action=list">ListAccounts</a>
+    |<a href="AccountServlet?action=List">ListAccounts</a>
 </c:if>
     <hr/>
     
