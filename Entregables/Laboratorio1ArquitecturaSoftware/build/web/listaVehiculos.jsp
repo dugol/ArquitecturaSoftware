@@ -14,9 +14,24 @@
         <title>Lista Vehiculos</title>
     </head>
     <body>
+        
+        <form action="Lab2Servlet?action=filter" method="post">
+            <table>
+                <tr>
+                        <th>  <label><b>Vehiculo por matricula</b></label> </th>
+                        <th> 
+                            <input type="text" placeholder="Ingrese matricula" class="form-control" name="filter" required=""/>
+                        </th>
+                        <th>
+                            <input class="btn btn-info btn-lg" type="submit" name="action" value="Buscar">
+                        </th>
+                </tr>
+            </table>
+            
+        </form>
         <jsp:include page="menu.jsp"></jsp:include>
         <c:forEach var="a" items="${vehiculos}">
-           |${a.id}| |${a.modelo}| |${a.marca}| |${a.matricula.getMatricula()}| 
+           |${a.id}| |${a.modelo}| |${a.marca}| |${a.matricula.getCodigoMatricula()}| 
            <hr/>
         </c:forEach>        
         

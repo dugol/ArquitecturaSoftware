@@ -140,7 +140,15 @@ public class Lab2Servlet extends HttpServlet {
                 vehiculoFacade.create(v);
                 url = "login.jsp";
 
-            } else if ("logout".equals(action)) {
+            } else if ("filter".equals(action)) {
+                String filter=request.getParameter("filter");
+                Matricula m= new Matricula();
+                m.setCodigoMatricula(filter);
+                List<Vehiculo> vehiculos=vehiculoFacade.findByMatricula(m);
+                request.getSession().setAttribute("vehiculos", vehiculos);
+                url = "listaVehiculos.jsp";
+            } 
+            else if ("logout".equals(action)) {
                 request.getSession().removeAttribute("login");
                 url = "login.jsp";
             }

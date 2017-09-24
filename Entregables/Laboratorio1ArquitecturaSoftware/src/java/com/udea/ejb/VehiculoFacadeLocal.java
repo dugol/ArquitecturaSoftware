@@ -5,6 +5,7 @@
  */
 package com.udea.ejb;
 
+import com.udea.entity.Matricula;
 import com.udea.entity.Vehiculo;
 import java.util.List;
 import javax.ejb.Local;
@@ -29,5 +30,7 @@ public interface VehiculoFacadeLocal {
     List<Vehiculo> findRange(int[] range);
 
     int count();
+    
+    List<Vehiculo> findByMatricula(Matricula m);
     
 }

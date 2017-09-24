@@ -5,10 +5,13 @@
  */
 package com.udea.ejb;
 
+import com.udea.entity.Matricula;
 import com.udea.entity.Vehiculo;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,6 +30,15 @@ public class VehiculoFacade extends AbstractFacade<Vehiculo> implements Vehiculo
 
     public VehiculoFacade() {
         super(Vehiculo.class);
+    }
+    
+    @Override
+    public List<Vehiculo> findByMatricula(Matricula m){
+        Query q=em.createQuery("select v from Vehiculo v where v.matricula=:matricula");
+        q.setParameter("matricula",m);
+        return q.getResultList();
+        
+        
     }
     
 }
