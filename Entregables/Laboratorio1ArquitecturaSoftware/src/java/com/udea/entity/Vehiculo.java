@@ -5,7 +5,13 @@
  */
 package com.udea.entity;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URLConnection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +26,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -115,6 +122,26 @@ public class Vehiculo implements Serializable {
         this.matricula = matricula;
     }
 
+    public String openFileToString() throws UnsupportedEncodingException {
+        
+        String file_string = new String(this.foto,"UTF-8");
+
+        return file_string;
+    }
+    
+     public String getFotoBase64() throws IOException {
+        if (foto != null) {
+            String mimeType;
+            try (InputStream is = new BufferedInputStream(new ByteArrayInputStream(foto))) {
+                mimeType = URLConnection.guessContentTypeFromStream(is);
+            }
+            String base64 = DatatypeConverter.printBase64Binary(foto);
+            System.out.println("data:" + mimeType + ";base64," + base64);
+            return "data:" + mimeType + ";base64," + base64;
+        }
+        return "";
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -139,5 +166,5 @@ public class Vehiculo implements Serializable {
     public String toString() {
         return "com.udea.entity.Vehiculo[ id=" + id + " ]";
     }
-    
+
 }

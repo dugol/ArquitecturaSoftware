@@ -3,6 +3,10 @@
     <servlet>
         <servlet-name>Lab2Servlet</servlet-name>
         <servlet-class>com.udea.servlet.Lab2Servlet</servlet-class>
+    <multipart-config>
+      <max-file-size>25165824</max-file-size>
+      <max-request-size>41943040</max-request-size>
+    </multipart-config>
     </servlet>
     <servlet-mapping>
         <servlet-name>Lab2Servlet</servlet-name>

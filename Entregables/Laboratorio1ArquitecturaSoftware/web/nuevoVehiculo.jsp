@@ -14,7 +14,7 @@
     <body>
         <jsp:include page="menu.jsp"></jsp:include>
         <div class="container well">
-            <form action="Lab2Servlet?action=newCar" method="post">
+            <form action="Lab2Servlet?action=newCar" method="post" enctype="multipart/form-data">
 
                 <table>
                     <tr>
@@ -40,7 +40,7 @@
                     </tr>
                     <tr>
                         <th> <label><b>Seleccione imagen del vehiculo</b></label></th>
-                        <th><input type="file" class="form-control" onchange="cargarImagen(this)" accept="image/*"  name="image"
+                        <th><input type="file" class="form-control" accept="image/*"  name="image"
                                    required=""/> </th>
                     </tr>
 

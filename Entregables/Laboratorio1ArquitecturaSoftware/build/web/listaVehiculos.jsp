@@ -14,7 +14,7 @@
         <title>Lista Vehiculos</title>
     </head>
     <body>
-        
+         <jsp:include page="menu.jsp"></jsp:include>
         <form action="Lab2Servlet?action=filter" method="post">
             <table>
                 <tr>
@@ -28,12 +28,29 @@
                 </tr>
             </table>
             
-        </form>
-        <jsp:include page="menu.jsp"></jsp:include>
+        </form>      
+           <table border="1" align="center"  class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Matricula</th>
+                    <th>Imagen</th>
+                </tr>
+            </thead>
         <c:forEach var="a" items="${vehiculos}">
-           |${a.id}| |${a.modelo}| |${a.marca}| |${a.matricula.getCodigoMatricula()}| 
-           <hr/>
-        </c:forEach>        
+        <tr>
+            <td>${a.id}</td>
+            <td>${a.modelo}</td>
+            <td>${a.marca}</td>
+            <td>${a.matricula.getCodigoMatricula()}</td>
+            <td><img src="${a.getFotoBase64()}"/></td>
+        </tr>         
+
+        <hr/>
+    </c:forEach>        
+    </table>
         
     </body>
 </html>

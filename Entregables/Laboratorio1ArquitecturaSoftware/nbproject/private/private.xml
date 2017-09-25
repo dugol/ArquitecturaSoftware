@@ -3,21 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/listaVehiculos.jsp</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/manager.jsp</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/src/java/com/udea/entity/Matricula.java</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/WEB-INF/web.xml</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/nuevaVenta.jsp</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/src/java/com/udea/servlet/Lab2Servlet.java</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/src/java/com/udea/entity/Venta.java</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/src/java/com/udea/entity/Vehiculo.java</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/menu.jsp</file>
             <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/listaVentas.jsp</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/listaClientes.jsp</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/src/java/com/udea/entity/Cliente.java</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/nuevoVehiculo.jsp</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/login.jsp</file>
-            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/nuevoCliente.jsp</file>
+            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/listaVehiculos.jsp</file>
+            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/src/java/com/udea/ejb/CuentaFacade.java</file>
+            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/src/java/com/udea/servlet/Lab2Servlet.java</file>
+            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/src/java/com/udea/ejb/VehiculoFacadeLocal.java</file>
+            <file>file:/E:/Usuarios/Daniel/Documents/NetBeansProjects/Laboratorio1ArquitecturaSoftware/web/menu.jsp</file>
         </group>
     </open-files>
 </project-private>

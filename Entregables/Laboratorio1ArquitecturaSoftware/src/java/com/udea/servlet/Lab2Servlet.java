@@ -32,8 +32,7 @@ import javax.servlet.http.Part;
  *
  * @author Daniel
  */
-@WebServlet("/Upload")
-@MultipartConfig(maxFileSize = 16177215)
+@MultipartConfig
 public class Lab2Servlet extends HttpServlet {
 
     @EJB
@@ -118,7 +117,17 @@ public class Lab2Servlet extends HttpServlet {
 
             } else if ("newCar".equals(action)) {
                 Part archivo = request.getPart("image");
-                InputStream i = archivo.getInputStream();
+                Matricula m = new Matricula();
+                m.setCodigoMatricula(request.getParameter("matricula"));
+                m.setPlaca(request.getParameter("placa"));
+                Vehiculo v = new Vehiculo();
+
+                
+                v.setMarca(request.getParameter("marca"));
+                v.setModelo(request.getParameter("modelo"));
+                v.setMatricula(m);
+                if(archivo !=null && archivo.getSize()>0){
+                 InputStream i = archivo.getInputStream();
                 byte[] contents;
                 ByteArrayOutputStream output = new ByteArrayOutputStream();
                 byte[] buffer = new byte[1024];
@@ -127,15 +136,12 @@ public class Lab2Servlet extends HttpServlet {
                     output.write(buffer, 0, count);
                 }//debugger says myinputstream has blksize 16384, buffcount 12742, and max 127394 here
                 contents = output.toByteArray();
-                Matricula m = new Matricula();
-                m.setCodigoMatricula(request.getParameter("matricula"));
-                m.setPlaca(request.getParameter("placa"));
-                Vehiculo v = new Vehiculo();
-
                 v.setFoto(contents);
-                v.setMarca(request.getParameter("marca"));
-                v.setModelo(request.getParameter("modelo"));
-                v.setMatricula(m);
+                }else{
+                    v.setFoto(null);
+                }
+                
+                
                 matriculaFacade.create(m);
                 vehiculoFacade.create(v);
                 url = "login.jsp";

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : listAccount
-    Created on : 11/01/2017, 09:02:32 PM
-    Author     : Usuario
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -14,11 +8,26 @@
         <title>Lista Ventas</title>
     </head>
     <body>
-        <jsp:include page="menu.jsp"></jsp:include>
+         <jsp:include page="menu.jsp"></jsp:include>
+        <table border="1" align="center"  class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Valor</th>
+                    <th>Matricula auto vendido</th>
+                    <th>cliente</th>
+                </tr>
+            </thead>
         <c:forEach var="a" items="${ventas}">
-           |${a.idVenta}| |${a.valor}| |${a.matricula.getCodigoMatricula()}| |${a.cliente.getDocumento()}| 
-           <hr/>
-        </c:forEach>        
-        
+        <tr>
+            <td>${a.idVenta}</td>
+            <td>${a.valor}</td>
+            <td>${a.matricula.getCodigoMatricula()}</td>
+            <td>${a.cliente.getDocumento()}</td>
+        </tr>         
+
+        <hr/>
+    </c:forEach>        
+    </table>     
     </body>
 </html>
