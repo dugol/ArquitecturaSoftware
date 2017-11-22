@@ -1,0 +1,10 @@
+lenguaje: java
+branches: 
+    only:
+        master
+notifications:
+    email:
+        recipients:
+            danielugiraldo@gmail.com
+jdk: oraclejdk
+script: mvn clean install
